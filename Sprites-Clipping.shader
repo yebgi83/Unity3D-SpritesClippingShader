@@ -24,22 +24,22 @@
 		Blend SrcAlpha OneMinusSrcAlpha
 	 
         CGPROGRAM
-        #pragma surface surf NoLighting
+        #pragma surface surf NoLighting alpha
         
-	    sampler2D _MainTex;
-	    float4    _ViewPort;	
+	sampler2D _MainTex;
+	float4    _ViewPort;	
 				        
-	    struct Input
+	struct Input
         {
             float2 uv_MainTex;
             float3 worldPos;
         };
 
- 		fixed4 LightingNoLighting(SurfaceOutput s, fixed3 lightDir, fixed atten)
+ 	fixed4 LightingNoLighting(SurfaceOutput s, fixed3 lightDir, fixed atten)
         {
 	        fixed4 c;
         
-    	    c.rgb = s.Albedo; 
+    	        c.rgb = s.Albedo; 
         	c.a = s.Alpha;
                         
         	return c;
